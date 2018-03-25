@@ -1,0 +1,23 @@
+.main-footer {
+  background-color: #444;
+  color: #aaa;
+  font-size: 8pt;
+  letter-spacing: 1px;
+  padding: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+
+  .main-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-footer .footer-copyright,
+  .main-footer > a {
+    margin-bottom: 0.5em;
+  }
+}

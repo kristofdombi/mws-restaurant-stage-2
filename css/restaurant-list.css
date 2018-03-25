@@ -1,0 +1,97 @@
+/* ====================== Restaurant Listing ====================== */
+
+.restaurants {
+  background-color: #f3f3f3;
+  list-style: outside none none;
+  padding: 2em 1em 3.5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.restaurants .restaurant-item {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-family: Arial,sans-serif;
+  margin: 1em;
+  padding: 2em;
+  text-align: left;
+  flex-basis: calc(33% - 6 * 1em);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.restaurants .restaurant-img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.restaurants .restaurant-item .restaurant-name {
+  color: #f18200;
+  font-family: Arial,sans-serif;
+  font-size: 14pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 1.25em 0 0.75em;
+  text-transform: uppercase;
+}
+
+.restaurants .restaurant-address {
+  margin: 0;
+  font-size: 11pt;
+}
+
+.restaurants .restaurant-item .restaurant-link-more {
+  background-color: orange;
+  border: 3px solid #eee;
+  color: #fff;
+  display: inline-block;
+  font-size: 10pt;
+  margin: 1em 0 0;
+  padding: 0.5em 2em 0.75em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.restaurants .restaurant-item .restaurant-link-more:hover,
+.restaurants .restaurant-item .restaurant-link-more:focus {
+  background-color: #fff;
+  color: #f18200;
+}
+
+.restaurants .restaurant-item .restaurant-link-more:active {
+  background-color: #f18200;
+  color: #fff;
+}
+
+@media (max-width: 1213px) {
+  .restaurants .restaurant-item {
+    flex-basis: calc(49.5% - 6 * 1em);
+  }
+}
+
+@media (max-width: 817px) {
+  .restaurants .restaurant-item {
+    flex-basis: calc(45% - 6 * 1em);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .restaurants .restaurant-item {
+    flex-basis: 80%;
+  }
+
+  .restaurants .restaurant-item .restaurant-link-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
