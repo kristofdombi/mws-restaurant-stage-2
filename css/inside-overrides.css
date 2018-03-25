@@ -1,19 +1,27 @@
 /* ====================== Restaurant Details ====================== */
 
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+.inside .main-content {
+  display: flex;
 }
 
-.inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
+.inside .map-container,
+.inside .restaurant-container {
+  flex: 1;
+}
+
+.inside .restaurant-container {
+  order: -1;
+}
+
+.inside .map-container #map {
+  height: calc(100vh - 6em);
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  position: -moz-sticky !important;
+  position: -ms-sticky !important;
+  position: -o-sticky !important;
   top: 80px;
-  width: 50%;
+  width: 50vw;
 }
 
 .inside #map {
@@ -26,4 +34,20 @@
   bottom: 0;
   position: absolute;
   width: 50%;
+}
+
+@media (max-width: 600px) {
+
+  .inside {
+    padding-top: 5.5em;
+  }
+
+  .inside .main-content {
+    display: block;
+  }
+
+  .inside .map-container #map {
+    width: 100%;
+    max-height: 400px;
+  }
 }
