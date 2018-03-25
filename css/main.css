@@ -21,6 +21,10 @@
 	box-sizing: border-box;
 }
 
+*:focus {
+	outline: 2px dashed #f18200;
+}
+
 /* CSS Document */
 
 body,
