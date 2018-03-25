@@ -67,6 +67,7 @@
 /* Mobile view */
 
 @media (max-width: 600px) {
+
   .main-header {
     height: 3.5em;
   }

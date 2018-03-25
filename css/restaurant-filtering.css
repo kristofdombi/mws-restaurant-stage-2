@@ -1,0 +1,40 @@
+/* ====================== Restaurant Filtering ====================== */
+
+.filter-options {
+  background-color: #3397DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.filter-options .filter-options-label {
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 20px;
+}
+
+.filter-options select {
+  background-color: #fff;
+  border: 1px solid #fff;
+  font-family: Arial,sans-serif;
+  font-size: 12pt;
+  height: 2em;
+  letter-spacing: 0;
+  margin: 0.5em;
+  padding: 0 0.5em;
+  width: 200px;
+}
+
+@media (max-width: 600px) {
+
+  .filter-options {
+    flex-direction: column;
+  }
+
+  .filter-options .filter-options-label {
+    margin: 0 0 1em 0;
+  }
+}
