@@ -1,0 +1,19 @@
+{
+  "name": "mws-restaurant-stage-2",
+  "version": "0.0.0",
+  "description": "> A restaurant app leveraging offline capabilities 🍕",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristof0425/mws-restaurant-stage-2.git"
+  },
+  "author": "Kristof Dombi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kristof0425/mws-restaurant-stage-2/issues"
+  },
+  "homepage": "https://github.com/kristof0425/mws-restaurant-stage-2#readme"
+}
