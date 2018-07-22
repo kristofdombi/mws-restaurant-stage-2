@@ -1,17 +1,27 @@
-# Mobile Web Specialist Certification Course
+# Mobile Web Specialist Certification Course - Stage 2
 
 > A restaurant app leveraging offline capabilities 🍕
 
-## Getting started
+## To review the project
 
 Firstly, start the server:
 
 ```shell
 # in case of Python 2
-python -m SimpleHTTPServer 8000
-
-# in case of Python 3
-python3 -m http.server 8000
+cd server
+node server
 ```
 
-Secondly, open [localhost](http://localhost:8000/).
+Secondly, start the frontend server:
+
+```shell
+npm run review
+```
+
+## To contribute to the project
+
+...start the development server:
+
+```shell
+npm run develop
+```
