@@ -1,6 +1,10 @@
 /**
  * Common database helper functions.
  */
+
+const IDB_DATABASE = "restaurantDatabase";
+const IDB_OBJECT = "restaurantObject";
+
 class DBHelper {
   /**
    * Database URL.
@@ -11,22 +15,78 @@ class DBHelper {
     return `http://localhost:${port}/restaurants`;
   }
 
+  /*
+   * Create connection with Index db
+   */
+  static openIDBConnection() {
+    if (!navigator.serviceWorker) {
+      return Promise.resolve();
+    }
+    return idb.open(IDB_DATABASE, 1, upgradeDatabase => {
+      const store = upgradeDatabase.createObjectStore(IDB_OBJECT, {
+        keyPath: "id"
+      });
+      store.createIndex("by-id", "id");
+    });
+  }
+
+  /*
+   * Save data to IDB database
+   */
+  static saveToIDB(data) {
+    return DBHelper.openIDBConnection().then(db => {
+      if (!db) {
+        return;
+      }
+      const tx = db.transaction(IDB_OBJECT, "readwrite");
+      const store = tx.objectStore(IDB_OBJECT);
+      data.forEach(restaurant => {
+        store.put(restaurant);
+      });
+      return tx.complete;
+    });
+  }
+
   /**
    * Fetch all restaurants.
    */
   static fetchRestaurantsFromAPI() {
     return fetch(DBHelper.DATABASE_URL).then(res =>
       res.json().then(restaurants => {
-        // TODO IDB
+        DBHelper.saveToIDB(restaurants);
         return restaurants;
       })
     );
   }
 
   static async fetchRestaurants(cb) {
-    // TODO return cached results
-    const restaurants = await DBHelper.fetchRestaurantsFromAPI();
-    cb(null, restaurants);
+    return DBHelper.fetchCachedRestaurants()
+      .then(restaurants => {
+        if (restaurants.length) {
+          return Promise.resolve(restaurants);
+        } else {
+          return DBHelper.fetchRestaurantsFromAPI();
+        }
+      })
+      .then(restaurants => {
+        cb(null, restaurants);
+      })
+      .catch(error => {
+        cb(error, null);
+      });
+  }
+
+  /**
+   * Get cached restaurants from IDB.
+   */
+  static fetchCachedRestaurants() {
+    return DBHelper.openIDBConnection().then(db => {
+      if (!db) {
+        return;
+      }
+      const store = db.transaction(IDB_OBJECT).objectStore(IDB_OBJECT);
+      return store.getAll();
+    });
   }
 
   /**
@@ -165,7 +225,7 @@ class DBHelper {
     if (restaurant.photograph) {
       return `/img/${restaurant.photograph}.jpg`;
     }
-    return 'https://placehold.it/800x400';
+    return "https://placehold.it/800x400";
   }
 
   /**
