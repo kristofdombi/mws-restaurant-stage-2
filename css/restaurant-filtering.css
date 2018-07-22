@@ -1,7 +1,7 @@
 /* ====================== Restaurant Filtering ====================== */
 
 .filter-options {
-  background-color: #3397DB;
+  background-color: #5bb2ec;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .filter-options .filter-options-label {
-  color: white;
+  color: #000;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;

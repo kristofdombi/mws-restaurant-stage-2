@@ -59,8 +59,8 @@
 #reviews-list .review-item .review-item-rating {
   display: inline-block;
   padding: 0.5em;
-  color: #fff;
-  background-color: #f58500;
+  color: #000;
+  background-color: #ff9f2d;
   border-radius: 2px;
   font-weight: 600;
   text-transform: uppercase;
