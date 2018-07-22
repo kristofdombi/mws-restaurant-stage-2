@@ -1,0 +1,15 @@
+{
+  "short_name": "R Reviews",
+  "name": "Restaurant Reviews",
+  "description": "Restaurant Reviews ",
+  "display": "standalone",
+  "icons": [
+    { "src": "img/48x.png", "type": "image/png", "sizes": "48x48" },
+    { "src": "img/96x.png", "type": "image/png", "sizes": "96x96" },
+    { "src": "img/192x.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": "index.html",
+  "theme_color": "#f3f3f3",
+  "background_color": "#bbbbbb"
+}
