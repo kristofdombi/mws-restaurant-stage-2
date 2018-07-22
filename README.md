@@ -7,7 +7,6 @@
 Firstly, start the server:
 
 ```shell
-# in case of Python 2
 cd server
 node server
 ```
