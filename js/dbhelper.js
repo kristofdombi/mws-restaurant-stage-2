@@ -1,3 +1,5 @@
+import idb from './idb.js';
+
 /**
  * Common database helper functions.
  */
@@ -5,7 +7,7 @@
 const IDB_DATABASE = "restaurantDatabase";
 const IDB_OBJECT = "restaurantObject";
 
-class DBHelper {
+export default class DBHelper {
   /**
    * Database URL.
    * Change this to restaurants.json file location on your server.
@@ -223,9 +225,9 @@ class DBHelper {
    */
   static imageUrlForRestaurant(restaurant) {
     if (restaurant.photograph) {
-      return `/img/${restaurant.photograph}.jpg`;
+      return `/img/${restaurant.photograph}.webp`;
     }
-    return "https://placehold.it/800x400";
+    return "https://placehold.it/400x200";
   }
 
   /**

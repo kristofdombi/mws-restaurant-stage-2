@@ -1,4 +1,4 @@
-window.imgAlts = [
+export const imgAlts = [
   "Fancy crowded fancy restaurant.",
   "Sliced pizza on a plate.",
   "An empty, spacious restaurant.",
