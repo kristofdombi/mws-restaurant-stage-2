@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/kristof0425/mws-restaurant-stage-2/issues"
   },
-  "homepage": "https://github.com/kristof0425/mws-restaurant-stage-2#readme"
+  "homepage": "https://github.com/kristof0425/mws-restaurant-stage-2#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-webserver": "^0.9.1",
+    "imagemin-pngquant": "^6.0.0"
+  },
+  "dependencies": {
+    "lozad": "^1.5.0"
+  }
 }
